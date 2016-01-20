@@ -8,7 +8,7 @@ public class IfStatementDoesNotWorkCorrectly {
             double v1 = Math.random() * 5 + 1;
             String shirt = String.valueOf(BigDecimal.valueOf(v1).intValue());
 
-            if (shirt == "1") {
+            if (shirt.equals("1")){
                 System.out.println("It's 1!");//why this block does not work????))
             } else {
                 System.out.println(shirt);
