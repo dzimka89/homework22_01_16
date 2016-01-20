@@ -10,7 +10,8 @@ public class ArrayOutOfBoundException {
         arrayShow(xArray);
         arrayShow(yArray);
 
-        A a = new A(xArray, yArray);
+        A a = new A();
+        a.setWidthHeight(xArray, yArray, yArray.length);
 
         System.out.println("Height = " + a.getHeight());
         System.out.println("Width = " + a.getWidth());

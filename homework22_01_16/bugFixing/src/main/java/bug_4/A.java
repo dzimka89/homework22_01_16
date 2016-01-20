@@ -4,18 +4,27 @@ import java.awt.*;
 
 class A {
 
-    private int[] xArray;
-    private int[] yArray;
 
-    public A(int[] x, int[] y) {
-        this.xArray = x;
-        this.yArray = y;
+    public int[] xArray = new int[5];
+    public int[] yArray = new int[5];
+    int width;
+    int height;
+
+
+//    public A(int[] x, int[] y) {
+//        this.xArray = x;
+//        this.yArray = y;
+//    }
+
+    public void setWidthHeight(int x[], int y[], int i) {
+        Polygon polygon = new Polygon(x, y, i);
+
+        int width = polygon.getBounds().width;
+        int height = polygon.getBounds().height;
+        this.width = width;
+        this.height = height;
     }
 
-    Polygon polygon = new Polygon(xArray, yArray, yArray.length);
-
-    private int width = polygon.getBounds().width;
-    private int height = polygon.getBounds().height;
 
     public int getWidth() {
         return width;
