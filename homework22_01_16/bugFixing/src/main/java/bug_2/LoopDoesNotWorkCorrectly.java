@@ -32,9 +32,14 @@ public class LoopDoesNotWorkCorrectly {
             System.out.printf("= %.2f\n ", result);
             System.out.println("Do you want to continue: \n");
             String isContinueRequired = scanner.nextLine();
-            if (isContinueRequired.equalsIgnoreCase("N")) status = false;
-            else if (isContinueRequired.equalsIgnoreCase("Y")) status = true;
+            if (isContinueRequired.equalsIgnoreCase("N")) {
+                status = false;
+                System.out.println("Good day!:)");
+            }
+            else if (isContinueRequired.equalsIgnoreCase("Y")){
+                status = true;
+            }
 
-        } while (true);
+        } while (status == true);
     }
 }
