@@ -8,7 +8,7 @@ public class ChangesDoNotApplyForIntegerValueFromMethod {
     }
 
     public void changeVal(Integer value) {
-        value = new Integer(3);
+        this.value = new Integer(value); // добавили this.value
     }
 
     public static void main(String args[]) {
@@ -17,6 +17,8 @@ public class ChangesDoNotApplyForIntegerValueFromMethod {
         ChangesDoNotApplyForIntegerValueFromMethod c = new ChangesDoNotApplyForIntegerValueFromMethod();
         System.out.println(c.getValue());//get value before changes
         c.changeVal(a);//change c from 1 -> a -> must be 2222
-        System.out.print("a == c.getValue() ? " + (a == c.getValue() ? "true" : "false"));//should be "true"
+        System.out.println(c.getValue());
+        System.out.print("a == c.getValue() ? " + (a.equals(c.getValue()) ? "true" : "false"));//should be "true"
+        // метод сравнения == не работает т.к., мы используем не примитивный идентификатор int, а Integer и а - это просто ссылка.
     }
 }
